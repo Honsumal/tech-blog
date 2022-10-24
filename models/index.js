@@ -3,9 +3,9 @@ const Comment = require('./comment');
 const Post = require('./post');
 const User = require('./user');
 
-Comment.belongsTo (Post, {
-    foreignKey: 'post_id'
-});
+// Comment.belongsTo (Post, {
+//     foreignKey: 'post_id'
+// });
 
 Comment.belongsToMany (User, {
     through: {
