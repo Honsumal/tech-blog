@@ -28,6 +28,11 @@ Post.init(
             key: 'id'
         }
     },
+    post_time: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: sequelize.NOW
+    }
   },
   {
     sequelize,

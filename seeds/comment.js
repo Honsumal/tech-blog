@@ -6,12 +6,14 @@ const commentData = [
         content: 'Ah cripes, there go my savings',
         user_id: 2,
         post_id: 1,
+        post_time: 1666678006
     },
     {
         id: 2,
         content: `that's a clickbait title -.-`,
         user_id: 1,
         post_id: 2,
+        post_time: 1666678006
     },
 ]
 

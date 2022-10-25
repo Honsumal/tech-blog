@@ -78,7 +78,9 @@
   }
 
   .content {
-    margin: auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   img {
@@ -88,7 +90,7 @@
   
   /* CARDS */
   .card {
-    margin: 20px;
+    padding: 10px;
     flex: 0 1 300px;
     border: 7px double var(--dark);
     border-radius: 10px;

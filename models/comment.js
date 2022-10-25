@@ -30,6 +30,11 @@ Comment.init(
             model: 'post',
             key: 'id'
         }
+    },
+    post_time: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: sequelize.NOW
     }
   },
   {
