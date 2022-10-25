@@ -1,17 +1,15 @@
 const router = require('express').Router();
-const Post = require ('../models/post')
-const Comment = require('../models/comment')
+const withAuth = require('../utils/auth')
+const {User, Post, Comment} = require('../models')
 
 router.get('/', async (req,res) => {
     if (!req.session.loggedIn) {
       res.redirect('/login');
       return;
     }
-    const dbPostData = await Post.findAll({
-        include: [{ model: Comment,
-        attributes: ['content', 'user_id']}],
-        where: {user_id: req.session.user_id}
-    });
+    const dbPostData = await Post.findAll({where: {user_id: req.session.user_id}});
+
+     const userData = await User.findByPk (req.session.user_id)
   
     const posts = dbPostData.map((post) => post.get({ plain: true }))
   
