@@ -1,15 +1,16 @@
 const User = require('../models/user')
+const bcrypt = require('bcrypt')
 
 const userData = [
     {
         id: 1,
-        username: 'melonlord',
-        password: 'th3bestearthbend3r',
+        username: 'Meer',
+        password: bcrypt.hashSync('dasamsam', 10),
         email: 'melonlord@gmail.com'
     },{
         id: 2,
-        username: 'boomerang',
-        password: 'yu3them00nspir1t',
+        username: 'Pang',
+        password: bcrypt.hashSync('bigpang', 10),
         email: 'ideaman@gmail.com'
     }
 ]
