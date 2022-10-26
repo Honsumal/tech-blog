@@ -10,7 +10,15 @@ router.get('/:id', async (req,res) => {
 
     const comments = posts[0].comments
 
-    res.render('post', {posts, comments, loggedIn: req.session.loggedIn, user_id: req.session.user_id})
-  })
+    req.session.save(() => {
+        req.session.post_id = req.params.id
+
+        res.render('post', {posts, comments, loggedIn: req.session.loggedIn, user_id: req.session.user_id, post_id: req.session.post_id})
+    })
+
+    
+})
+
+
 
 module.exports = router

@@ -91,6 +91,12 @@
     max-width: 100%;
     height: auto;
   }
+
+  #comment-box input {
+    height: 200px;
+    width: 500px;
+    margin-left: 100px;
+  }
   
   /* CARDS */
   .card {
