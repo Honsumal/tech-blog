@@ -1,38 +1,8 @@
 const router = require('express').Router();
-const User = require('../../models/user');
+
 const Post = require('../../models/post');
-const Comment = require('../../models/comment');
 
 let today = new Date()
-
-// router.get('/', async (req,res) => {
-//     try {
-//         const postData = await Post.findAll ({
-//             //include: [{ model:Comment }]
-//         });
-//         res.status(200).json(postData)
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// });
-
-// router.get('/:id', async (req, res) => {
-//     try {
-//       const postData = await Post.findByPk(req.params.id, {
-//         //include: [{ model: Comment }],
-//       });
-  
-//       if (!postData) {
-//         res.status(404).json({ message: 'No post found with that id!' });
-//         return;
-//       }
-  
-//       res.status(200).json(postData);
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-     
-//   });
 
   router.post('/', async (req, res) => {
     // create a new post

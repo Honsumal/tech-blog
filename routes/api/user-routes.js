@@ -60,21 +60,4 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// router.put('/:id', async (req, res) => {
-//   // update a user by its `id` value
-//   try {
-//     const userData = await User.update(req.body,{
-//       where: {id: req.params.id}
-//     });
-
-//     if (!userData){
-//       res.status(404).json({message: 'No user with this id found'})
-//     }
-//     res.status(200).json({message: `Successfully updated user`})
-    
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 module.exports = router;

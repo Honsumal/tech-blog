@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth')
 const {User, Post, Comment} = require('../models')
 
 //GET request for single Post
-router.get('/:id', async (req,res) => {
+router.get('/:id', withAuth, async (req,res) => {
     const dbPostData = await Post.findAll({include: [{ model: Comment,
         attributes: ['content', 'user_id', 'post_time']}], where: {id: req.params.id}})
 
