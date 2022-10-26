@@ -20,7 +20,7 @@ This application has been deployed onto Heroku and should run without any instal
 
 This application has been deployed onto Heroku, here is a link to the deployed site:
 
-
+https://techjack.herokuapp.com/
 
 Here is an image of the deployed application's dashboard on loading:
 
