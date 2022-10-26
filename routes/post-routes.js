@@ -13,7 +13,12 @@ router.get('/:id', async (req,res) => {
     req.session.save(() => {
         req.session.post_id = req.params.id
 
-        res.render('post', {posts, comments, loggedIn: req.session.loggedIn, user_id: req.session.user_id, post_id: req.session.post_id})
+        if (posts[0].user_id === req.session.user_id){
+            res.render('own-post', {posts, comments, loggedIn: req.session.loggedIn, user_id: req.session.user_id, post_id: req.session.post_id})
+
+        } else {
+            res.render('post', {posts, comments, loggedIn: req.session.loggedIn, user_id: req.session.user_id, post_id: req.session.post_id})
+        }
     })    
 })
 

@@ -1,0 +1,18 @@
+{{#each posts as |post|}}
+{{> own-post-details}}
+{{/each}}
+
+{{#each comments}}
+{{> comment-details}}
+{{/each}}
+
+<div id="comment-box">
+    <p>Add Comment</p>
+    <textarea rows="5" cols="50" id="comment-input" placeholder="Enter comment"></textarea>
+    <br>
+    <button class="btn btn-secondary" id="post">Post Comment</button>
+</div>
+
+
+<script src="../../assets/js/add-comment.js"></script>
+<script src="../../assets/js/own-post-buttons.js"></script>

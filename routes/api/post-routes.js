@@ -49,11 +49,11 @@ let today = new Date()
     }
   });
   
-  router.put('/:id', async (req, res) => {
+  router.put('/', async (req, res) => {
     // update a post by its `id` value
     try {
       const postData = await Post.update(req.body,{
-        where: {id: req.params.id}
+        where: {id: req.session.post_id}
       });
   
       if (!postData){
@@ -66,12 +66,12 @@ let today = new Date()
     }
   });
   
-  router.delete('/:id', async (req, res) => {
+  router.delete('/', async (req, res) => {
     // delete a post by its `id` value
     try {
       const postData = await Post.destroy({
         where: {
-          id: req.params.id,
+          "id": req.session.post_id
         },
       });
   
