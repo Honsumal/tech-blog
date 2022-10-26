@@ -78,7 +78,7 @@
   }
 
   .post-btn {
-    margin-left: 280px;
+    margin-left: 330px;
   }
 
   .content {
@@ -101,6 +101,8 @@
   /* CARDS */
   .card {
     padding: 10px;
+    margin: 0 0 20px 0;
+    width: 800px;
     flex: 0 1 300px;
     border: 7px double var(--dark);
     border-radius: 10px;
