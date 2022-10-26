@@ -3,40 +3,47 @@ const User = require('../../models/user');
 const Post = require('../../models/post');
 const Comment = require('../../models/comment');
 
-router.get('/', async (req,res) => {
-    try {
-        const postData = await Post.findAll ({
-            //include: [{ model:Comment }]
-        });
-        res.status(200).json(postData)
-    } catch (err) {
-        res.status(500).json(err)
-    }
-});
+let today = new Date()
 
-router.get('/:id', async (req, res) => {
-    try {
-      const postData = await Post.findByPk(req.params.id, {
-        //include: [{ model: Comment }],
-      });
+// router.get('/', async (req,res) => {
+//     try {
+//         const postData = await Post.findAll ({
+//             //include: [{ model:Comment }]
+//         });
+//         res.status(200).json(postData)
+//     } catch (err) {
+//         res.status(500).json(err)
+//     }
+// });
+
+// router.get('/:id', async (req, res) => {
+//     try {
+//       const postData = await Post.findByPk(req.params.id, {
+//         //include: [{ model: Comment }],
+//       });
   
-      if (!postData) {
-        res.status(404).json({ message: 'No post found with that id!' });
-        return;
-      }
+//       if (!postData) {
+//         res.status(404).json({ message: 'No post found with that id!' });
+//         return;
+//       }
   
-      res.status(200).json(postData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+//       res.status(200).json(postData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
      
-  });
+//   });
 
   router.post('/', async (req, res) => {
     // create a new post
     try {
-      const postData = await Post.create(req.body);
-      res.status(200).json({message: `Successfully created post: ${req.body.title}`});
+      const postData = await Post.create({
+        "title": req.body.title,
+        "content": req.body.content,
+        "user_id": req.session.user_id,
+        "post_time": today
+      });
+      res.status(200).json({message: `Successfully created post:`});
     } catch (err) {
       res.status(500).json(err);
     }
