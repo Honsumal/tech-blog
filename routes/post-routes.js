@@ -5,8 +5,10 @@ const withAuth = require('../utils/auth');
 //GET request for single Post
 router.get('/:id', withAuth, async (req,res) => {
 
-    const dbPostData = await Post.findAll({include: [{ model: Comment,
-    attributes: ['content', 'user_id', 'post_time']}], where: {id: req.params.id}})
+    const dbPostData = await Post.findAll({include: [
+        { model: Comment, attributes: ['content', 'user_id', 'post_time'], include: [User]}, 
+        { model: User, attributes: ['username']}], 
+        where: {id: req.params.id}})
 
     const posts = dbPostData.map((post) => post.get({ plain: true }))
 

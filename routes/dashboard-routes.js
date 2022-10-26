@@ -3,7 +3,7 @@ const withAuth = require('../utils/auth')
 const {User, Post, Comment} = require('../models')
 
 router.get('/', withAuth, async (req,res) => {
-    const dbPostData = await Post.findAll({where: {user_id: req.session.user_id}});
+    const dbPostData = await Post.findAll({ include: [{ model: User, attributes: ['username']}], where: {user_id: req.session.user_id}});
 
     const posts = dbPostData.map((post) => post.get({ plain: true }))
 
