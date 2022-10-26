@@ -52,9 +52,11 @@ let today = new Date()
   router.put('/', async (req, res) => {
     // update a post by its `id` value
     try {
-      const postData = await Post.update(req.body,{
-        where: {id: req.session.post_id}
-      });
+      const postData = await Post.update(
+        {
+          content: req.body.content
+        },
+        {where: {id: req.session.post_id}});
   
       if (!postData){
         res.status(404).json({message: 'No post with this id found'})

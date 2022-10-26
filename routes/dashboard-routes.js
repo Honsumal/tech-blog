@@ -19,7 +19,7 @@ router.get('/', async (req,res) => {
       res.redirect('/login');
       return;
     }
-    const dbPostData = await Post.findAll({where: {post_id: req.session.post_id}});
+    const dbPostData = await Post.findAll({where: {id: req.session.post_id}});
   
     const posts = dbPostData.map((post) => post.get({ plain: true }))
   

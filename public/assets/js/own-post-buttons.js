@@ -7,7 +7,7 @@ const updateButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-        return;
+        document.location.replace('/dashboard/update');
     } else {
         alert('You cannot update this post')
     }
