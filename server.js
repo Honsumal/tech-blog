@@ -15,6 +15,12 @@ const sess = {
   secret: 'placeholder',
   resave: false,
   saveUninitialized: true,
+  cookie: {
+    maxAge: 60* 60* 1000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict'
+  }
 };
 
 app.use(session(sess));

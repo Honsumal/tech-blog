@@ -5,14 +5,14 @@ let today = new Date()
 const postData = [
     {
         id: 1,
-        title: 'Biden announces restrictions on selling semiconductors to China',
-        content: 'Biden announces restrictions on selling semiconductors to China',
+        title: 'Google and Microsoft hit by global economic slowdown',
+        content: 'As the global economy tends towards a recession, even tech giants such as Google and Microsoft are reporting diminished revenue growths.',
         user_id: 1,
         post_time: today
     },{
         id: 2,
-        title: 'Cheese prices plummet after discovery on the moon',
-        content: 'Cheese prices plummet after recent discovery on the moon makes researchers postulate that microbes can can survive outer space can also survive pasteurization',
+        title: 'Meta stocks continue to fall',
+        content: 'Investor confidence plummeted in February, and has continued to decline throughout the rest of the year as revenue continued to drop. Despite this, facebook is continuing to grow in parts of the world and has thus avoided a decline in usership.',
         user_id: 2,
         post_time: today
     }
